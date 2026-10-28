@@ -1,0 +1,33 @@
+{
+  "name": "pave-app",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@9.15.4",
+  "scripts": {
+    "dev": "concurrently \"pnpm --filter frontend dev\" \"pnpm --filter backend dev\"",
+    "dev:frontend": "pnpm --filter frontend dev",
+    "dev:backend": "pnpm --filter backend dev",
+    "build": "pnpm --filter frontend build && pnpm --filter backend build",
+    "db:generate": "pnpm --filter backend db:generate",
+    "db:push": "pnpm --filter backend db:push"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "better-sqlite3",
+      "esbuild"
+    ],
+    "overrides": {
+      "browserslist@^4.0.0": "4.29.0",
+      "nanoid@^3.0.0": "3.3.19",
+      "postcss@^8.0.0": "8.5.28",
+      "shell-quote@^1.0.0": "1.12.0",
+      "undici@^7.0.0": "7.29.1",
+      "ws@^8.0.0": "8.21.1",
+      "sharp": "0.35.5",
+      "source-map-js@^1.0.0": "1.2.2"
+    }
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

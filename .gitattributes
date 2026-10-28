@@ -1,0 +1,18 @@
+# Line endings, written by Pave Studio when it created this project.
+#
+# Without this file, git stores whatever bytes each contributor's
+# core.autocrlf produced. A Windows contributor with core.autocrlf=true
+# commits CRLF; a macOS contributor commits LF; each then sees the
+# other's files as entirely changed.
+#
+# text=auto: git stores text as LF and leaves binaries alone.
+* text=auto eol=lf
+
+# Windows-native scripts stop running if they are checked out with LF.
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+# Never normalise vendored dependencies: keep them byte-for-byte as
+# published. Last, so it wins over the "*" rule above.
+**/node_modules/** -text
