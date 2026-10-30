@@ -18,27 +18,7 @@ When you create or delegate creation of a planning document (STRATEGY.md, UIUX.m
 
 After the summary, ask "Ready to proceed?" using the question tool. This lets users skim and approve quickly without context-switching to a file.
 
-## Document attachments
-
-When the user attaches a document (PDF, Word, Excel, or PowerPoint), PAVE Studio extracts its text natively and includes that text directly in the conversation as a text attachment. Read and use that provided text as the document's contents.
-
-For a document that is NOT a chat attachment but already lives in the project on disk (e.g. an .xlsx the user downloaded into ./docs), just READ IT WITH YOUR `read` TOOL — the same tool you use for source files. Your `read` tool extracts PDF, Word, Excel, and PowerPoint files (.pdf, .xlsx, .xlsm, .ods, .docx, .pptx) to plain text natively; it does NOT return mojibake for these formats. Pass the file path exactly as you would for any other file:
-
-read docs/Project_Data.xlsx
-
-Do NOT open, download, unzip, or write a script in ANY language to parse the binary file — not Python (openpyxl, pdfplumber), not Node (`node -e "require('xlsx')"`), not PowerShell, not anything else — and do NOT `npm`/`pnpm`/`yarn add` a parser library (xlsx, pdf-parse, mammoth, …) to read a document. Both the chat-attachment text and your `read` tool already give you the document's contents, and script-based parsing is unreliable in the sandbox (especially on Windows). If `read` returns empty or truncated text, tell the user instead of trying to re-parse the file yourself.
-
-## Package management
-
-Bundled versions of node, npm, pnpm, npx, and corepack are available in your PATH. You do NOT need a system-wide Node.js installation. 
-### Detecting the project package manager
-
-Before installing any package, always detect which package manager the project uses:
-1. Check the `packageManager` field in `package.json` (e.g. `"packageManager": "pnpm@9.0.0"`).
-2. If absent, look for a lock file in the project root:
-- `pnpm-lock.yaml`   → use pnpm
-- `yarn.lock`        → use yarn
-- `bun.lockb`        → use bun (fall back to npm if bun is unavailable)
+## Dumb`        → use bun (fall back to npm if bun is unavailable)
 - `package-lock.json` → use npm
 3. If no lock file exists, default to npm.
 
