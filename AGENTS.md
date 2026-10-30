@@ -347,3 +347,6 @@ Reply in plain text with a short explanation in non-technical language. If there
 ## Response formatting
 
 When presenting implementation plans, phases, or task breakdowns, do NOT include development time estimates or durations (e.g. "Week 1-2", "2 weeks", "Day 1-3"). Only list the phase name and its items. For example, write "Phase 1 - Foundation" instead of "Phase 1 - Foundation (Week 1-2)".
+dfsdfbdsfbfsddfq324231423414234234
+
+fgerjgerpgjerbjrgonretopmgrpogmjeopbjweropgerpgomerwopgwergpmrtpoithwrg
