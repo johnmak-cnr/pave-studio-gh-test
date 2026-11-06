@@ -1,0 +1,1 @@
+- 2026-11-06 17:49 — Set --bg to #0000ff (replaced rainbow gradient from v66) in frontend/src/index.css:4; change staged, not committed by agent

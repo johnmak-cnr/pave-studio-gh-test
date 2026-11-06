@@ -1,0 +1,2 @@
+- 2026-11-06 — User queued many duplicate 'change the color to blue' messages and said 'testing the queue messages, continue without asking' — on duplicates, verify state and answer concisely; do not ask a question per duplicate.
+- 2026-11-06 — fetch tool blocks loopback hosts (error: Blocked loopback address for host 'localhost') — use bash curl for http://localhost dev-server checks instead.
